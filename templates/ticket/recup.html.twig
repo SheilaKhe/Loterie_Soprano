@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gagné !{% endblock %}
+
+{% block body %}
+<main style="text-align:center">
+<img width="180px"src="{{asset('img/logo_soprano.png')}}">
+<form id="login-form" method="post">
+    <p style:"font-size:larger">Récupère ton lot avec ton code</p>
+    <input type="email" placeholder="E-mail" name="email" id="inputEmail" class="form-control" required autofocus>
+    <input type="code" placeholder="{{ code.number }}" value="{{code.number}}" name="code" id="inputCode" class="form-control" readOnly>
+    <button class="button" type="submit">
+        Valider
+    </button>
+    <br>
+    <br>
+    <a style="color:white;" target="__blank" href="https://www.soprashop.com/pages/reglement-jeu-concours-soprano-reedition-multiverse">Règlement du concours</a>
+</form>
+</main>
+{% endblock %}

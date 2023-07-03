@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accès à mon ticket{% endblock %}
+
+{% block body %}
+<main style="text-align:center">
+<img width="180px"src="{{asset('img/logo_soprano.png')}}">
+<form id="login-form" method="post">
+        {% for message in app.flashes('error') %}
+            <div  class="alert alert-success">
+            <i style="color:orange">{{ message }}</i>
+                
+            </div>
+        {% endfor %}
+    <input type="email" placeholder="E-mail" name="email" id="inputEmail" class="form-control" required autofocus>
+    <input type="password" placeholder="Code unique" name="password" id="inputPassword" class="form-control" required>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+    <button class="button" type="submit">
+        Je gratte mon ticket
+    </button>
+    <br>
+    <br>
+    <a style="margin-top:30px;color:white;" target="__blank" href="https://www.soprashop.com/pages/reglement-jeu-concours-soprano-reedition-multiverse">Règlement du concours</a>
+</form>
+</main>
+{% endblock %}

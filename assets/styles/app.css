@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0 auto;
+    width: 100%;
+    font-family: 'Nunito sans', sans-serif;
+}
+
+body {
+  background-image: url('../../public/img/cieletoile.jpg');
+  background-size: cover;
+
+}
+main {
+    min-height: 100%;
+    margin-top: 20vh;
+
+}
+
+main::after {
+    content: "";
+    display: block;
+}
+ 
+
+
+/* TICKET */
+
+
+#ticket {
+  border: solid 1px black;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  background-color: white;
+  width: 70%;
+  background-image: url('../../public/img/soprano-mutliverse-cover_blakhat.jpg');
+  background-size: cover;
+  color: white;
+}
+
+.ticket-header {
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 1px 1px 9px lightgrey;
+}
+
+.container {
+    border: 1px solid black;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    -o-user-select: none;
+    user-select: none;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(18, 22, 62);
+    color: white;
+    background-size: contain;
+  }
+
+  
+  .canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+
+
+#lot {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 3px 0;
+}
+
+  /* FORM */
+
+  /* LOGIN */
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px white;
+  color: white;
+  justify-content: center;
+  padding: 20px;
+  margin: 40px auto;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+#login-title {
+  text-align: center;
+}
+
+
+#login-form input {
+  border-radius: 5px;
+  border-color: lightgrey;
+  height: 40px;
+  width: 85%;
+  margin: 10px 0;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 14px 25px;
+  line-height: normal;
+  border: 1px solid white;
+  background-color: transparent;
+  color: rgb(18, 22, 62);
+  border-radius: 0;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.2em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  z-index: 1;
+  -webkit-tap-highlight-color: initial;
+  margin: 0 20px;
+  font-size: x-small;
+}
+
+.button::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1, 1);
+  transform-origin: left center;
+  z-index: -2;
+  background-color: white;
+  border: solid 1px white;
+  color: black;
+}
+
+.button:hover {
+  color: white;
+}
+
+@media (-moz-touch-enabled: 0), (hover: hover) {
+  .button:not([disabled])::before {
+    transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    color: white;
+    border-color: white;
+  }
+
+  .button:not([disabled]):hover::before {
+    transform-origin: right center;
+    transform: scale(0, 1);
+  }
+}
+/* #login-form button:hover {
+  animation: button-slide 1s ease-in;
+} */
+
+/* LOT */
+#container-lot {
+  text-align: center;
+  margin: 0 15%;
+  border: solid 2px white;
+  color: white;
+  padding: 15px;
+}
+
+#container-lot .regl {
+  color: white;
+}
+#container-lot form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#container-lot h2 {
+  color: transparent;
+  -webkit-text-stroke-color: orange;
+  -webkit-text-stroke-width: 0.5px;
+  font-size: x-large;
+
+}
+
+#container-lot input{
+  border: solid 1px black;
+}
+
+.logo {
+  width: 160px;
+}
+@media screen and (min-width: 592px) {
+  #ticket {
+    width: 394px;
+  }
+
+  .button {
+    font-size: normal;
+  }
+  .logo {
+    width: 200px;
+  }
+
+  #container-lot {
+    margin: 0 25%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #ticket {
+    background-size: 100%;
+  }
+}

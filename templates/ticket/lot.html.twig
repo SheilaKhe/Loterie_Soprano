@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ton ticket à gratter{% endblock %}
+
+{% block body %}
+    <main style="text-align:center">
+        <div id="container-lot">
+    <img class="logo" src="{{asset('img/logo_soprano.png')}}" alt="">
+            {% if lot is not null %} 
+
+                <h3>{{ lot }}</h3>
+
+                {% if code is not null %}
+                    <p>{{ code }}</p>              
+                    <p style="font-size:small"><i>Pense à bien noter ce code</i></p>
+
+                <a class="button" href="{{path('tonlot', {'id': lot.id, 'id2': code.id})}}">Valider mon ticket</a>
+              {% endif %}
+            {% endif %}
+            <br>
+            <br>
+                <a style="color:white;" target="__blank" href="https://www.soprashop.com/pages/reglement-jeu-concours-soprano-reedition-multiverse">Règlement du concours</a>
+
+        </div>
+
+    </main>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gratte, gratte{% endblock %}
+
+{% block body %}
+    <main style="text-align:center">
+    <section id="ticket">
+    <img class="logo" src="{{asset('img/logo_soprano.png')}}">
+
+    <div class="ticket-header">
+        <h1>TON TICKET A GRATTER</h1>
+        <p style="font-size:small"><i>Une participation par commande</i></p>
+    </div>
+        <div class="container" id="js-container">
+            <canvas class="canvas" id="js-canvas"></canvas>
+            <form method="POST" class="form" style="visibility: hidden;">
+              {% if result == 'Gagné !!' %}
+              <h4 id="lot"> {{ result }}</h4>
+              <br>
+              <br>
+                <a style="margin-top:20px" class="button" href="{{path('app_lot', {'id': result.id})}}">Voir ton lot</a>
+              {% else %}
+              <h4 style="text-align:center;margin:3px 0">GAGNÉ !</h4>
+              <p style="font-size:small">Tu recevras un son inédit par mail de Soprano le 25 novembre !</p>
+                <a style="color:white" href="https://www.soprashop.com">Retourner au Soprashop</a>
+              {% endif %} 
+ 
+            </form>  
+          </div>
+    
+    </section>
+    <br>
+    <a style="color:white;" target="__blank" href="https://www.soprashop.com/pages/reglement-jeu-concours-soprano-reedition-multiverse">Règlement du concours</a>
+
+    </main>
+{% endblock %}
